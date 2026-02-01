@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RodinX.ai | AI-агенты для бизнеса под ключ | От идеи до 1+ млн ₽/мес</title>
+    <meta name="description" content="Создаём AI-агентов для автоматизации бизнеса. Экономия 90% времени, окупаемость 2-4 месяца, ROI 400%+. Бесплатный расчёт экономии за 60 секунд.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-hover: #5568d3;
+            --secondary: #764ba2;
+            --success: #2ECC71;
+            --error: #E74C3C;
+            --warning: #F39C12;
+            --info: #3498DB;
+            --text-dark: #2C3E50;
+            --text-light: #FFFFFF;
+            --text-secondary: #7F8C8D;
+            --bg-light: #FFFFFF;
+            --bg-gray: #f8f9fa;
+            --bg-dark: #2C3E50;
+            --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-success: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --gradient-orange: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --space-xs: 8px;
+            --space-s: 13px;
+            --space-m: 21px;
+            --space-l: 34px;
+            --space-xl: 55px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-m);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: var(--gradient-purple);
+            color: white;
+            padding: var(--space-xl) 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: var(--space-s) var(--space-m);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: var(--space-m);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: clamp(40px, 7vw, 72px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: var(--space-m);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 2.5vw, 24px);
+            opacity: 0.95;
+            margin-bottom: var(--space-xl);
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--space-m);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-xl);
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 13px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-success {
+            background: var(--gradient-success);
+            color: white;
+            box-shadow: 0 8px 24px rgba(17, 153, 142, 0.4);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(17, 153, 142, 0.5);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 48px;
+            font-weight: 900;
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* SECTION */
+        section {
+            padding: var(--space-xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-m);
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: var(--space-m);
+        }
+
+        .section-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            margin-bottom: var(--space-m);
+            background: var(--gradient-purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* PROBLEM-SOLUTION */
+        .problem-solution {
+            background: var(--bg-gray);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-l);
+            margin-top: var(--space-l);
+        }
+
+        .comparison-card {
+            background: white;
+            padding: var(--space-l);
+            border-radius: 21px;
+            box-shadow: 0 4px 13px rgba(0,0,0,0.1);
+        }
+
+        .comparison-card.problem {
+            border: 3px solid var(--error);
+        }
+
+        .comparison-card.solution {
+            border: 3px solid var(--success);
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.05) 0%, rgba(39, 174, 96, 0.05) 100%);
+        }
+
+        .comparison-icon {
+            font-size: 64px;
+            margin-bottom: var(--space-m);
+        }
+
+        .comparison-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: var(--space-m);
+        }
+
+        .comparison-card.problem .comparison-title {
+            color: var(--error);
+        }
+
+        .comparison-card.solution .comparison-title {
+            color: var(--success);
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: var(--space-s) 0;
+            font-size: 16px;
+            display: flex;
+            align-items: start;
+            gap: var(--space-s);
+        }
+
+        .comparison-list li::before {
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+
+        .comparison-card.problem li::before {
+            content: "❌";
+        }
+
+        .comparison-card.solution li::before {
+            content: "✅";
+        }
+
+        /* NAVIGATION CARDS */
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-l);
+            margin-top: var(--space-l);
+        }
+
+        .nav-card {
+            background: white;
+            padding: var(--space-l);
+            border-radius: 21px;
+            box-shadow: 0 4px 13px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-dark);
+            display: block;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        .nav-card-icon {
+            font-size: 64px;
+            margin-bottom: var(--space-m);
+        }
+
+        .nav-card-title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: var(--space-s);
+            color: var(--primary);
+        }
+
+        .nav-card-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-m);
+        }
+
+        .nav-card-btn {
+            display: inline-block;
+            padding: 13px 32px;
+            background: var(--gradient-purple);
+            color: white;
+            border-radius: 13px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* AGENT TYPES */
+        .agent-types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-m);
+            margin-top: var(--space-l);
+        }
+
+        .agent-card {
+            background: white;
+            padding: var(--space-l);
+            border-radius: 13px;
+            box-shadow: 0 4px 13px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .agent-card-icon {
+            font-size: 56px;
+            margin-bottom: var(--space-m);
+        }
+
+        .agent-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: var(--space-s);
+        }
+
+        .agent-card-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-m);
+        }
+
+        .agent-card-price {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        /* METRICS */
+        .metrics {
+            background: var(--gradient-purple);
+            color: white;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-l);
+            margin-top: var(--space-l);
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-l);
+            border-radius: 21px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-icon {
+            font-size: 48px;
+            margin-bottom: var(--space-m);
+        }
+
+        .metric-value {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: var(--space-s);
+        }
+
+        .metric-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* HOW IT WORKS */
+        .steps {
+            background: var(--bg-gray);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-l);
+            margin-top: var(--space-l);
+        }
+
+        .step-card {
+            background: white;
+            padding: var(--space-l);
+            border-radius: 21px;
+            box-shadow: 0 4px 13px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: var(--space-l);
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-purple);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            box-shadow: 0 4px 13px rgba(102, 126, 234, 0.4);
+        }
+
+        .step-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: var(--space-s);
+            margin-top: var(--space-l);
+        }
+
+        .step-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-l);
+            margin-top: var(--space-l);
+        }
+
+        .pricing-card {
+            background: white;
+            padding: var(--space-l);
+            border-radius: 21px;
+            box-shadow: 0 4px 13px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-m);
+            background: var(--gradient-purple);
+            color: white;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: var(--space-m);
+        }
+
+        .pricing-tier {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: var(--space-s);
+        }
+
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .pricing-period {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-l);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: var(--space-l);
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: var(--space-s) 0;
+            font-size: 15px;
+            display: flex;
+            align-items: start;
+            gap: var(--space-s);
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--bg-gray);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: var(--space-l) auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            padding: var(--space-l);
+            border-radius: 13px;
+            margin-bottom: var(--space-m);
+            box-shadow: 0 4px 13px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: var(--space-s);
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--gradient-success);
+            color: white;
+            text-align: center;
+            padding: var(--space-xl) 0;
+        }
+
+        .cta-title {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            margin-bottom: var(--space-m);
+        }
+
+        .cta-text {
+            font-size: clamp(16px, 2vw, 20px);
+            opacity: 0.95;
+            margin-bottom: var(--space-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-m);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: var(--space-xl) 0 var(--space-l);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-l);
+            margin-bottom: var(--space-l);
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: var(--space-m);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-s);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-l);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+
+        /* STICKY CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: var(--space-m);
+            right: var(--space-m);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sticky-cta .btn {
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .agent-types-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+            }
+
+            .agent-types-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-cta {
+                left: var(--space-m);
+                right: var(--space-m);
+            }
+
+            .sticky-cta .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🚀 AI-агенты нового поколения</div>
+                <h1 class="hero-title">AI-агенты для бизнеса под ключ</h1>
+                <p class="hero-subtitle">
+                    Автоматизируйте рутину, сократите затраты на 90% и масштабируйте бизнес.<br>
+                    От идеи до production-ready системы за 4-6 недель.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#navigation" class="btn btn-primary">📊 Рассчитать экономию</a>
+                    <a href="https://t.me/rodinx_ai" class="btn btn-secondary" target="_blank">💬 Обсудить проект</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">90%</span>
+                        <span class="hero-stat-label">экономия времени</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">2-4 мес</span>
+                        <span class="hero-stat-label">окупаемость</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">400%+</span>
+                        <span class="hero-stat-label">ROI за год</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">24/7</span>
+                        <span class="hero-stat-label">работа агента</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM-SOLUTION -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">💡 Проблема → Решение</div>
+                <h2 class="section-title">Вы тратите деньги на рутину</h2>
+                <p class="section-subtitle">AI-агент автоматизирует до 90% задач и окупается за 2-4 месяца</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card problem">
+                    <div class="comparison-icon">😰</div>
+                    <h3 class="comparison-title">Сейчас</h3>
+                    <ul class="comparison-list">
+                        <li>3-5 сотрудников на рутине</li>
+                        <li>180 000+ ₽/мес на зарплаты</li>
+                        <li>Ошибки из-за усталости</li>
+                        <li>Работа только 8 часов</li>
+                        <li>Медленный ответ клиентам</li>
+                        <li>Сложно масштабировать</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card solution">
+                    <div class="comparison-icon">🚀</div>
+                    <h3 class="comparison-title">С AI-агентом</h3>
+                    <ul class="comparison-list">
+                        <li>1 AI-агент + 1 контроллер</li>
+                        <li>15 000 ₽/мес на обслуживание</li>
+                        <li>99.9% точность ответов</li>
+                        <li>Работа 24/7 без перерывов</li>
+                        <li>Ответ за 3 секунды</li>
+                        <li>Легко масштабировать</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVIGATION SECTION -->
+    <section id="navigation">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">🎯 Выберите свой путь</div>
+                <h2 class="section-title">Начните с того, что вам нужно</h2>
+                <p class="section-subtitle">Три инструмента для разных задач — выберите подходящий</p>
+            </div>
+
+            <div class="nav-cards">
+                <a href="https://rodinx-ai.github.io/ai-agent-roi-calculator/" class="nav-card">
+                    <div class="nav-card-icon">📊</div>
+                    <h3 class="nav-card-title">Рассчитать экономию</h3>
+                    <p class="nav-card-text">Узнайте, сколько сэкономит ваш бизнес за 60 секунд. ROI, окупаемость и прогноз прибыли.</p>
+                    <span class="nav-card-btn">Открыть калькулятор →</span>
+                </a>
+
+                <a href="https://rodinx-ai.github.io/ai-agent-configurator/" class="nav-card">
+                    <div class="nav-card-icon">🤖</div>
+                    <h3 class="nav-card-title">Подобрать AI-агента</h3>
+                    <p class="nav-card-text">Ответьте на 7 вопросов и получите персональную рекомендацию с ценой и сроками.</p>
+                    <span class="nav-card-btn">Пройти квиз →</span>
+                </a>
+
+                <a href="https://rodinx-ai.github.io/ai-agent-kp-calculator/" class="nav-card">
+                    <div class="nav-card-icon">📋</div>
+                    <h3 class="nav-card-title">Получить КП</h3>
+                    <p class="nav-card-text">Заполните детальную форму и скачайте готовое коммерческое предложение в PDF.</p>
+                    <span class="nav-card-btn">Создать КП →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENT TYPES -->
+    <section class="agent-types">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">🔧 Типы решений</div>
+                <h2 class="section-title">AI-агент для любой задачи</h2>
+                <p class="section-subtitle">6 готовых решений для автоматизации ключевых процессов</p>
+            </div>
+
+            <div class="agent-types-grid">
+                <div class="agent-card">
+                    <div class="agent-card-icon">💬</div>
+                    <h3 class="agent-card-title">Поддержка клиентов</h3>
+                    <p class="agent-card-text">Ответы на FAQ, эскалация сложных кейсов, работа 24/7</p>
+                    <div class="agent-card-price">от 250 000 ₽</div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-card-icon">💼</div>
+                    <h3 class="agent-card-title">Продажи и лиды</h3>
+                    <p class="agent-card-text">Квалификация лидов, запись в CRM, персонализация</p>
+                    <div class="agent-card-price">от 300 000 ₽</div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-card-icon">✍️</div>
+                    <h3 class="agent-card-title">Генерация контента</h3>
+                    <p class="agent-card-text">Посты, email-рассылки, SEO-тексты, A/B тестирование</p>
+                    <div class="agent-card-price">от 200 000 ₽</div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-card-icon">📊</div>
+                    <h3 class="agent-card-title">Аналитика и отчёты</h3>
+                    <p class="agent-card-text">Сбор данных, поиск трендов, прогнозы, автоотчёты</p>
+                    <div class="agent-card-price">от 350 000 ₽</div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-card-icon">👥</div>
+                    <h3 class="agent-card-title">HR и рекрутинг</h3>
+                    <p class="agent-card-text">Скрининг резюме, интервью, онбординг сотрудников</p>
+                    <div class="agent-card-price">от 280 000 ₽</div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-card-icon">📄</div>
+                    <h3 class="agent-card-title">Документооборот</h3>
+                    <p class="agent-card-text">Обработка документов, извлечение данных, классификация</p>
+                    <div class="agent-card-price">от 320 000 ₽</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="metrics">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Цифры, которые говорят сами</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Реальные результаты наших AI-агентов</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">💰</div>
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">экономия на персонале</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-value">3 сек</div>
+                    <div class="metric-label">средняя скорость ответа</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-value">+30%</div>
+                    <div class="metric-label">рост конверсии</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-value">99.9%</div>
+                    <div class="metric-label">точность ответов</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="steps">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">⚙️ Процесс работы</div>
+                <h2 class="section-title">Как мы создаём AI-агента</h2>
+                <p class="section-subtitle">Прозрачный процесс от идеи до запуска</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Анализ и проектирование</h3>
+                    <p class="step-text">Изучаем ваши задачи, процессы и цели. Проектируем архитектуру агента и согласовываем функционал.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Разработка</h3>
+                    <p class="step-text">Создаём AI-агента на современном стеке: Python, LangChain, Claude API. Интегрируем с вашими системами.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Тестирование</h3>
+                    <p class="step-text">Проверяем работу на реальных данных, оптимизируем промпты, замеряем метрики качества.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Запуск и обучение</h3>
+                    <p class="step-text">Запускаем в production, обучаем вашу команду, передаём документацию и настраиваем мониторинг.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">💰 Тарифы</div>
+                <h2 class="section-title">Прозрачные цены</h2>
+                <p class="section-subtitle">Выберите тариф под ваш бюджет и масштаб</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-tier">MVP</div>
+                    <div class="pricing-price">120 000 ₽</div>
+                    <div class="pricing-period">стоимость разработки</div>
+                    <ul class="pricing-features">
+                        <li>Базовый функционал</li>
+                        <li>1 канал (Telegram или Web)</li>
+                        <li>До 1 000 запросов/мес</li>
+                        <li>Запуск за 2-3 недели</li>
+                        <li>Документация</li>
+                    </ul>
+                    <a href="https://rodinx-ai.github.io/ai-agent-kp-calculator/" class="btn btn-secondary" style="width: 100%;">Рассчитать точно</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">⭐ Популярный</div>
+                    <div class="pricing-tier">Standard</div>
+                    <div class="pricing-price">250 000 ₽</div>
+                    <div class="pricing-period">стоимость разработки</div>
+                    <ul class="pricing-features">
+                        <li>Production-ready система</li>
+                        <li>Мультиканальность</li>
+                        <li>До 10 000 запросов/мес</li>
+                        <li>Интеграции (CRM, email)</li>
+                        <li>Аналитический дашборд</li>
+                        <li>3 месяца поддержки</li>
+                    </ul>
+                    <a href="https://rodinx-ai.github.io/ai-agent-kp-calculator/" class="btn btn-success" style="width: 100%;">Рассчитать точно</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-tier">Enterprise</div>
+                    <div class="pricing-price">от 500 000 ₽</div>
+                    <div class="pricing-period">стоимость разработки</div>
+                    <ul class="pricing-features">
+                        <li>Кастомная архитектура</li>
+                        <li>Мультиагентная система</li>
+                        <li>Безлимитные запросы</li>
+                        <li>Все интеграции</li>
+                        <li>Выделенная команда</li>
+                        <li>SLA 99.9% uptime</li>
+                    </ul>
+                    <a href="https://t.me/rodinx_ai" class="btn btn-secondary" style="width: 100%;" target="_blank">Обсудить проект</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">❓ FAQ</div>
+                <h2 class="section-title">Частые вопросы</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Сколько времени занимает разработка?</div>
+                    <div class="faq-answer">MVP — 2-3 недели, Standard — 4-6 недель, Enterprise — 8-12 недель. Точные сроки зависят от сложности задачи и количества интеграций.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Какие гарантии качества?</div>
+                    <div class="faq-answer">Мы гарантируем точность ответов 99%+, предоставляем 3 месяца бесплатной технической поддержки и исправляем все баги в рамках гарантийного срока.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Можно ли интегрировать с нашими системами?</div>
+                    <div class="faq-answer">Да, мы интегрируем AI-агента с любыми системами через API: CRM (AmoCRM, Bitrix24, HubSpot), мессенджеры (Telegram, WhatsApp), email и другие.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Сколько стоит обслуживание?</div>
+                    <div class="faq-answer">От 15 000 ₽/мес в зависимости от количества запросов. В тарифе Standard — первые 3 месяца бесплатно.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Какие данные нужны для обучения?</div>
+                    <div class="faq-answer">База знаний (FAQ, документация), примеры диалогов, описание бизнес-процессов. Мы поможем структурировать данные на этапе анализа.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Можно ли начать с MVP и масштабировать?</div>
+                    <div class="faq-answer">Да! MVP — это быстрый старт для проверки гипотезы. Потом можно добавить функции и перейти на Standard или Enterprise.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Готовы автоматизировать бизнес?</h2>
+            <p class="cta-text">
+                Начните с бесплатного расчёта экономии и узнайте, сколько сэкономит ваш бизнес с AI-агентом
+            </p>
+
+            <div class="cta-buttons">
+                <a href="https://rodinx-ai.github.io/ai-agent-roi-calculator/" class="btn btn-primary">📊 Рассчитать экономию</a>
+                <a href="https://rodinx-ai.github.io/ai-agent-configurator/" class="btn btn-secondary">🤖 Пройти квиз</a>
+                <a href="https://t.me/rodinx_ai" class="btn btn-secondary" target="_blank">💬 Написать в Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>🚀 RodinX.ai</h3>
+                    <p style="opacity: 0.8; line-height: 1.7;">
+                        Создаём AI-агентов для автоматизации бизнеса. Production-ready решения на современном стеке технологий.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Инструменты</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://rodinx-ai.github.io/ai-agent-roi-calculator/">ROI Калькулятор</a></li>
+                        <li><a href="https://rodinx-ai.github.io/ai-agent-configurator/">Квиз-конфигуратор</a></li>
+                        <li><a href="https://rodinx-ai.github.io/ai-agent-kp-calculator/">Калькулятор КП</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Решения</h3>
+                    <ul class="footer-links">
+                        <li><a href="#agent-types">Поддержка клиентов</a></li>
+                        <li><a href="#agent-types">Продажи и лиды</a></li>
+                        <li><a href="#agent-types">Генерация контента</a></li>
+                        <li><a href="#agent-types">Аналитика</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://t.me/rodinx_ai" target="_blank">Telegram</a></li>
+                        <li><a href="mailto:hello@rodinx.ai">Email</a></li>
+                        <li><a href="https://rodinx.ai">Сайт</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 RodinX.ai | Создано с помощью RodinX Design System</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY CTA -->
+    <div class="sticky-cta" id="stickyCTA">
+        <a href="https://rodinx-ai.github.io/ai-agent-roi-calculator/" class="btn btn-primary">
+            📊 Рассчитать экономию
+        </a>
+    </div>
+
+    <script>
+        // Sticky CTA появляется при прокрутке
+        window.addEventListener('scroll', function() {
+            var stickyCTA = document.getElementById('stickyCTA');
+            if (window.scrollY > 800) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+        });
+
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        console.log('🚀 RodinX.ai Landing loaded!');
+    </script>
+
+</body>
+</html>
